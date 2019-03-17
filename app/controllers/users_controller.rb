@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   include RedirectAction
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  after_action :keep_last_pagination_data, only: [:index]
 
   # GET /users
   # GET /users.json
